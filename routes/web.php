@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,5 +16,12 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+//    Http::acceptJson()
+//        ->withToken(config('services.openai.key'))
+//        ->post("https://api.openai.com/v1/chat/completions", [
+//            'model' => 'gpt-3.5-turbo',
+//            'messages' => [['role' => 'user', 'content' => 'Hallo']],
+//        ])->json();
+
     return Inertia::render("Home");
 });
