@@ -6,7 +6,12 @@ module.exports = {
         './resources/**/*.vue',
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'primaer': '#004D9E',
+                'sekundaer': '#0093f9',
+            },
+        },
     },
     plugins: [require("daisyui")],
 }

@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\EnergyConsultationInquiryController;
+use App\Models\EnergyConsultationInquiry;
+use App\Services\EnergyConsultationInquiryService;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,13 +17,26 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-//    Http::acceptJson()
-//        ->withToken(config('services.openai.key'))
-//        ->post("https://api.openai.com/v1/chat/completions", [
-//            'model' => 'gpt-3.5-turbo',
-//            'messages' => [['role' => 'user', 'content' => 'Hallo']],
-//        ])->json();
+Route::inertia('/', 'Home', [
+    'image' => asset('storage/Schnee.png'),
+    'building_types' => EnergyConsultationInquiryService::BUILDING_TYPES,
+    'window_materials' => EnergyConsultationInquiryService::WINDOW_MATERIALS,
+    'window_glazing' => EnergyConsultationInquiryService::WINDOW_GLAZING,
+    'house_wall_insulation_material' => EnergyConsultationInquiryService::HOUSE_WALL_INSULATION_MATERIAL,
+])->name('home');
 
-    return Inertia::render("Home");
-});
+Route::post('energieberatung/', [EnergyConsultationInquiryController::class, 'store'])->name('energieberatung.store');
+
+Route::get('terminbuchung/', function () {
+    if (session()->has('super_secret')) {
+        return Inertia::render('Meeting', ['image' => asset('storage/Schnee.png')]);
+    }
+
+    abort(404);
+})->name('terminbuchung.create');
+
+Route::inertia('admin/', 'Admin', ['energy_consultation_inquiries' => (static fn () => EnergyConsultationInquiry::all()->each(function ($inquiry) {
+    $inquiry->bullet_list = str_replace('\n', '<br><br>', $inquiry->bullet_list);
+
+    return $inquiry->bullet_list;
+}))])->name('admin.index');
