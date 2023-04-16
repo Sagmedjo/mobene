@@ -1,7 +1,7 @@
 <p align="center"><a href="https://mobeneconnect.de" target="_blank"><img src="https://mobeneconnect.de/wp-content/uploads/2023/04/mobeneConnect-Logo-Slogan.png" width="400" alt="mobeneConnect Logo"></a></p>
 
-<p>You can check out a fully functional version of this project on <a href="https://app.mobeneconnect.de">mobeneConnect App</a></p>
-<p>The local version will not show a text in the KI Bullet List Modal when entering <a href="https://app.mobeneconnect.de/admin">Admin Site</a> because of missing SSL cert</p>
+<p>You can check out a fully functional version of this project on <a href="https://app.mobeneconnect.de" target="_blank">mobeneConnect App</a></p>
+<p>The local version will not show a text in the KI Bullet List Modal when entering <a href="https://app.mobeneconnect.de/admin" target="_blank">Admin Site</a> because of missing SSL cert</p>
 
 ## Installation
 
