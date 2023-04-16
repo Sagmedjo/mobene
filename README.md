@@ -17,4 +17,23 @@
     <li>run php artisan storage:link</li>
     <li>run php artisan migrate</li>
     <li>run npm install && npm run build</li>
+    <li>Finally php artisan serve to start a local server</li>
+</ul>
+
+## Important files are:
+
+<ul>
+    <li>FILE: app/Http/Controllers/EnergyConsultationInquiryController.php</li>
+    <li>FILE: app/Http/Requests/EnergyConsultationInquiryRequest.php</li>
+    <li>FILE: app/Jobs/AskChatGPT.php</li>
+    <li>FILE: app/Models/EnergyConsultationInquiry.php</li>
+    <li>FILE: app/Services/EnergyConsultationInquiryService.php</li>
+    <li>FILE: config/services.php</li>
+    <li>FILE: database/migrations/2023_04_15_170841_create_energy_consultation_inquiries_table.php</li>
+    <li>FOLDER: resources/js/Pages/</li>
+    <li>FOLDER: resources/js/Shared/</li>
+    <li>FILE: resources/js/app.js/</li>
+    <li>FILE: resources/views/app.blade.php/</li>
+    <li>FILE: routes/web.php/</li>
+    <li>FILE: tests/Feature/EnergyConsultationInquiryTest.php/</li>
 </ul>
