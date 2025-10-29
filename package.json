@@ -16,7 +16,7 @@
         "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^2.2.14",
         "@vitejs/plugin-vue": "^4.1.0",
-        "daisyui": "^2.51.5",
+        "daisyui": "^5.3.10",
         "vue": "^3.2.47",
         "ziggy-js": "github:tighten/ziggy"
     }
