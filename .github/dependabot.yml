@@ -9,4 +9,4 @@ updates:
       interval: "daily"
     # Das Limit muss > 0 sein, damit Dependabot Pull Requests erstellen kann.
     # Der Standardwert ist 5.
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 20
